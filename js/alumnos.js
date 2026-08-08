@@ -87,3 +87,41 @@ async function mostrarDocentes(){
     const datos = await obtenerDocentes();
     console.table(datos);
 }
+
+async function obtenerPosts(){
+    const respuesta = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const posts = await respuesta.json();
+    return posts;
+}
+
+function mostrarPosts(posts){
+    for (const post of posts.slice(0, 5)){
+        console.log(post.id, post.title, post.userId);
+    }
+}
+
+async function iniciarPosts(){
+    const posts = await obtenerPosts();
+    mostrarPosts(posts);
+}
+
+iniciarPosts();
+
+async function obtenerComentarios(){
+    const respuesta = await fetch("https://jsonplaceholder.typicode.com/comments");
+    const comentarios = await respuesta.json();
+    return comentarios;
+}
+
+function mostrarComentarios(comentarios){
+    for (const comentario of comentarios.slice(0, 5)){
+        console.log(comentario.id, comentario.postId, comentario.name);
+    }
+}
+
+async function iniciaComentarios(){
+    const comentarios = await obtenerComentarios();
+    mostrarComentarios(comentarios);
+}
+
+iniciaComentarios();
