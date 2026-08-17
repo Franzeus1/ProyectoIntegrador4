@@ -43,7 +43,8 @@ Durante el desarrollo del proyecto se incorporarán progresivamente nuevas tecno
 
 
 Actualmente:
-
+ 
+ CLASE 07   
 
 
 - HTML5
